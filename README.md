@@ -37,9 +37,21 @@ On Windows, use the same installer prompt with your personal skills directory, o
 
 ## Requirements and platform support
 
-Learning Lab itself is instructions and references; it needs no Python packages, account, database or Anki connection. The two companion skills are optional for explanations and practice.
+Explanations and practice work with the core skill on its own. The optional local knowledge base uses Python 3.10+ and the standard library.
 
 Both companion exporters use Python 3.10+ and the standard library. On macOS, invoke them with `python3`. Anki import requires desktop Anki and AnkiConnect on that machine. Dictionaries, ffmpeg-compatible media tools, downloads and local transcription are optional capabilities configured on the Mac; they are not bundled or copied from Windows. The card maker's built-in automatic TTS uses Windows System.Speech; on macOS supply pronunciation audio through `word_audio` or leave that optional capability unavailable. See each companion README for details.
+
+## Optional local knowledge base
+
+To reuse prior learning, create a directory outside the skill checkout with two subdirectories named `经历` (experience) and `能力` (ability). The skill writes preferences to `学习偏好.md` in the knowledge base.
+
+Create `knowledge-base.local.json` beside the installed `SKILL.md`. Set `root` to the absolute path of your knowledge base. On Windows, you can use forward slashes, as in `C:/Users/your-name/Documents/learning-lab-knowledge`.
+
+```json
+{"root": "/Users/your-name/Documents/learning-lab-knowledge"}
+```
+
+From the installed skill folder, run `python3 -X utf8 scripts/knowledge.py stats` to verify the setup. Use `python` on Windows. Git ignores the local settings file. For the record fields and update rules, see the [writeback guide](references/knowledge-writeback.md).
 
 ## Use
 

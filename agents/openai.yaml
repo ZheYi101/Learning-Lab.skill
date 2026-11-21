@@ -1,4 +1,4 @@
 interface:
   display_name: "Learning Lab"
-  short_description: "统一理解、练习、整理与复习，按需使用可视化、知识卡和语境卡。"
-  default_prompt: "用 $learning-lab 帮我处理眼前的学习材料，按当前需要选择讲解、可视化、练习、整理或复习。"
+  short_description: "从已有经验接上新学习，按需讲解、练习、复习，记下进展和偏好。"
+  default_prompt: "用 $learning-lab 带我学眼前的材料，结合我做过的事选例子，记下会影响下次学习的进展。"
