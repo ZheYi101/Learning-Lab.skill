@@ -4,12 +4,13 @@ description: >-
   Help users learn from real material or resolve an understanding gap through
   adaptive explanation, useful visuals, small experiments, and contextual practice;
   connect learning to selective notes, Anki cards, and review when requested.
-  Consult the user's local knowledge inventory for relevant prior experience and
-  save meaningful learning evidence, corrections, and stated preferences locally.
+  Consult the user's local knowledge inventory for relevant prior experience.
+  Use feedback to refine teaching and save meaningful learning evidence,
+  corrections, and stated preferences locally.
   Use for learning or understanding business processes, algorithms, papers,
   languages, mathematics, machine learning, and other subjects; for requests such
   as 帮我理解、教我、我还是不懂、用可视化解释、带我读这篇论文、陪我练习、
-  帮我记住、整理这次学习、接着上次学、登记我做过的事、更新我的学习偏好.
+  帮我记住、整理这次学习、接着上次学、登记我做过的事、回收学习反馈、更新我的学习偏好.
   Do not turn simple factual lookups, ordinary summaries/translations, production
   implementation, or debugging without a learning goal into tutoring sessions.
 ---
@@ -23,6 +24,7 @@ description: >-
 - 先想清楚用户读完应当能说清、判断或做出哪一步。先给最需要的答案，再给理解它必需的关系与成立条件。备考总览优先回答考到多深、上次到哪、接下来还缺什么。用户要完整推导时，保留足以自行复算的步骤。
 - 难点从用户确实会用的一步接过去。先拿一个熟悉的例子，指出旧例的哪个对象或动作对应新概念，再沿着关系多走一步。库里只有上课记录、转述或 AI 示范时，给足铺垫。旧例本身需要重新学时，用直接的具体示范。
 - 让读者知道上一句怎样走到下一句。用短句按推理或发生顺序讲清，把必要的中间一步写出来。多两句能让读者轻松跟上时，留住它们。图让空间或时序更清楚时，就近标出要看的变化。
+- 一道题连用几条规则时，按使用顺序说清每条规则决定什么、下一步用到哪个结果。空间位置会改变答案时，在同一个小例子里标明参照对象、边界和方向。
 - 发出前检查哪些地方要读者自己补因果、猜指代或在几个新符号间来回找。优先补这些台阶，再删重复。保留会改变结论的条件，讲到用户足以继续就收住。
 
 ## 从眼前任务开始
@@ -30,6 +32,7 @@ description: >-
 - 从用户的问题、材料和已有作答判断：他想做成什么，具体卡在哪一步，哪些前置知识已经会了。只使用有依据的判断，不给用户贴固定的学习风格标签。
 - 已有足够上下文就开始。只有答案会实质改变讲解时才问一个简短的校准问题；不要先发背景、水平、时间、目标的问卷。
 - 宽泛目标先给简短的方向图和一个可开始的切口；需要长期路线时再展开。明确的小问题直接解释，不先建课程。
+- 已知用户对章节还缺少上下文时，进题前先说明这部分知识解决什么问题、眼前练习用到哪个机制，再用一个小例子接到原题。
 - 用户指定材料、深度、节奏或完整解答时，以该要求为准。用户已在使用其他领域工作流时，沿用其材料与约定，避免重复建立学习流程。
 
 ## 借用个人知识库
@@ -70,6 +73,7 @@ description: >-
 ## 可视化与实验
 
 - 一次聚焦一个机制。只保留检验该想法所需的状态、标注和控件；让控制项改变有意义的结果，避免只播放或装饰。
+- 多节实验课逐课看需要观察的变化。适合动手的课用讲解里的同一案例做实验，让学习者在做题前能改一个条件或亲自推进一步，再对照发生变化的状态。讲解先把案例里的人、对象和初始条件说清，再引入描述这一步的术语。
 - 静态关系用 Mermaid、表格或简图即可；交互适合改变输入、单步查看、比较条件、操作对象。多种视图同时存在时，让同一对象或变量清楚对应。
 - 对话内交互在可用时使用 `visualize` skill，遵守它的输出约定。否则使用当前环境支持的图表、代码实验或文本推演；说明实际限制，不把缺少渲染工具变成学习的前置安装任务。
 - 用户要独立保存、分享或发布时再选择相应交付方式；普通理解请求默认在对话里完成，不自动搭网站、播放器或资料目录。
@@ -98,7 +102,7 @@ description: >-
 ## 讲解反馈
 
 - 课程站点和已分课的长材料默认每课一次反馈，评一个 1–5 分的整体读感，留言选填。课程页让用户点分即保存，也可以直接继续学。用户明确希望比较段落时，再用段号和好懂、读得顺、有趣的分项，支持读完一起反馈。
-- 按[教学反馈](references/teaching-feedback.md)记录所评的课程或段落、AI 预估和本人实际反馈。用最近的差异改进下一轮讲法，优先处理本人明确指出的跳步、陌生术语或没有发挥作用的类比。
+- 每次收到学习反馈，按[教学反馈](references/teaching-feedback.md)回填并判断哪些讲法或个人记录有依据可更新。本人授权持续改进时，当次把可复用的改法写入本技能，有影响的个人证据按[本地写回约定](references/knowledge-writeback.md)处理。简短告诉用户实际更新了什么。
 
 ## 保持轻量
 
